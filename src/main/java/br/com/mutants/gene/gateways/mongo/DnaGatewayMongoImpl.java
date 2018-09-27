@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Optional;
 
 @Component
 public class DnaGatewayMongoImpl implements DnaGatewayMongo {
@@ -14,10 +15,10 @@ public class DnaGatewayMongoImpl implements DnaGatewayMongo {
     @Autowired
     private DnaRepository dnaRepository;
 
-    public Dna findByDna(String[] dnaSequence) {
+    public Optional<Dna> findByDna(String[] dnaSequence) {
 
         try {
-            return dnaRepository.findByDna(dnaSequence);
+            return Optional.ofNullable(dnaRepository.findByDna(dnaSequence));
         } catch (Exception e) {
             throw new DnaDatabaseGatewayException("find");
         }
@@ -32,9 +33,9 @@ public class DnaGatewayMongoImpl implements DnaGatewayMongo {
         }
     }
 
-    public List<Dna> findAll() {
+    public Optional<List<Dna>> findAll() {
         try {
-            return dnaRepository.findAll();
+            return Optional.ofNullable(dnaRepository.findAll());
         } catch (Exception e) {
             throw new DnaDatabaseGatewayException("find all");
         }

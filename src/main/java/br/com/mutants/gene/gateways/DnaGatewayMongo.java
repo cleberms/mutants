@@ -3,12 +3,13 @@ package br.com.mutants.gene.gateways;
 import br.com.mutants.gene.domains.Dna;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface DnaGatewayMongo {
 
-    Dna findByDna(String[] dnaSequence);
+    Optional<Dna> findByDna(String[] dnaSequence);
 
     void save(Dna dna);
 
-    List<Dna> findAll();
+    Optional<List<Dna>> findAll();
 }

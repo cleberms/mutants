@@ -21,9 +21,11 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.*;
 
 @RunWith(SpringRunner.class)
@@ -48,9 +50,9 @@ public class DnaGatewayMongoImplIntTest {
 
         gateway.save(dna);
 
-        Dna savedDna = gateway.findByDna(dna.getDna());
+        Optional<Dna> savedDna = gateway.findByDna(dna.getDna());
 
-        assertEquals(dna, savedDna);
+        assertEquals(dna, savedDna.get());
     }
 
     @Test
@@ -84,10 +86,14 @@ public class DnaGatewayMongoImplIntTest {
         gateway.save(new Dna(new String[] { "dnaSequence2" }, false));
         gateway.save(new Dna(new String[] { "dnaSequence3" }, true));
 
-        List<Dna> result = gateway.findAll();
+        Optional<List<Dna>> result = gateway.findAll();
 
-        assertNotNull(result);
-        assertEquals(3, result.size());
+        assertTrue(result.isPresent());
+
+        List<Dna> dnaList = result.get();
+
+        assertNotNull(dnaList);
+        assertEquals(3, dnaList.size());
     }
 
     @Test
