@@ -9,12 +9,4 @@ public class DnaAlreadyValidatedException extends RuntimeException {
     public DnaAlreadyValidatedException() {
         super(MESSAGE);
     }
-
-    public HttpStatus httpStatus() {
-        return HttpStatus.UNPROCESSABLE_ENTITY;
-    }
-
-    public int httpStatusCode() {
-        return HttpStatus.UNPROCESSABLE_ENTITY.value();
-    }
 }

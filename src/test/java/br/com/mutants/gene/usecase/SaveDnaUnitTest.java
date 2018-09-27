@@ -65,8 +65,6 @@ public class SaveDnaUnitTest {
             saveDna.save(dna);
         } catch (SaveDnaException ex) {
             assertEquals("Error to save DNA.", ex.getMessage());
-            assertEquals(HttpStatus.UNPROCESSABLE_ENTITY, ex.httpStatus());
-            assertEquals(HttpStatus.UNPROCESSABLE_ENTITY.value(), ex.httpStatusCode());
             verify(validateMutantGene, VerificationModeFactory.times(1)).isMutant(any());
             verify(dnaMongo, VerificationModeFactory.times(1)).save(any(Dna.class));
 
@@ -83,8 +81,6 @@ public class SaveDnaUnitTest {
             saveDna.save(new Dna(new String[] { "dna" }, true));
         } catch (DnaAlreadyValidatedException ex) {
             assertEquals("The DNA sequence is already validated!", ex.getMessage());
-            assertEquals(HttpStatus.UNPROCESSABLE_ENTITY, ex.httpStatus());
-            assertEquals(HttpStatus.UNPROCESSABLE_ENTITY.value(), ex.httpStatusCode());
             verify(validateMutantGene, VerificationModeFactory.times(0)).isMutant(any());
             verify(dnaMongo, VerificationModeFactory.times(0)).save(any(Dna.class));
 

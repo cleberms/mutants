@@ -10,11 +10,4 @@ public class SaveDnaException extends RuntimeException {
         super(MESSAGE);
     }
 
-    public HttpStatus httpStatus() {
-        return HttpStatus.UNPROCESSABLE_ENTITY;
-    }
-
-    public int httpStatusCode() {
-        return HttpStatus.UNPROCESSABLE_ENTITY.value();
-    }
 }
