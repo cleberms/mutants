@@ -1,4 +1,4 @@
-package br.com.mutants.mutants;
+package br.com.mutants.gene;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
