@@ -78,6 +78,5 @@ public class MutantControllerIntTest {
         } catch (JsonProcessingException e) {
             throw new RuntimeException(e);
         }
-
     }
 }

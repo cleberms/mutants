@@ -59,7 +59,6 @@ public class SaveDnaUnitTest {
         when(dnaMongo.findByDna(any())).thenReturn(Optional.empty());
 
         doThrow(new DnaDatabaseGatewayException("save")).when(dnaMongo).save(any(Dna.class));
-        Dna result = null;
 
         try {
             saveDna.save(dna);
