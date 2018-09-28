@@ -46,9 +46,9 @@ mvn spring-boot:run
 
 ## Coverage
 
-A Cobertura do codigo está em 100%
+A Cobertura do codigo está em 93%
 
-![alt text](https://github.com/cleberms/mutants/blob/master/coverage/coverage.png)
+![coverage](https://github.com/cleberms/mutants/blob/master/coverage/coverage.png)
 
 ## Author
 
