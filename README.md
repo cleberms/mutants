@@ -1,7 +1,7 @@
-#Mutant Gene
+# Mutant Gene
 Api para identificar genes mutantes dado uma sequencia de DNA
 
-#Cloud
+## Cloud
 A aplicação foi hospedada no Heroku
 
 O banco mongo também está no Heroku
@@ -34,7 +34,7 @@ curl -X POST \
 
 ```
 
-#Getting Started
+## Getting Started
 
 Para iniciar a aplicação local deve rodar o seguinte comando:
 
@@ -44,12 +44,12 @@ mvn spring-boot:run
 
 ```
 
-#Coverage
+## Coverage
 
 A Cobertura do codigo está em 100%
 
-![alt text](https://github.com/cleberms/mutants/coverage/coverage.png)
+![alt text](https://github.com/cleberms/mutants/blob/master/coverage/coverage.png)
 
-#Author
+## Author
 
 Cleber Santaterra
